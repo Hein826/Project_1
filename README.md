@@ -36,18 +36,20 @@ FROM (
         (SELECT DATE_TRUNC('year', MAX(orderdate)) + INTERVAL '1 year - 1 day' FROM sales),
         INTERVAL '1 day'
     )::date AS date
-) AS d;'''
+) AS d;
+```
 
 ## 🧮 DAX Measures
-'''dax
+DAX
 Total Sales = SUM(Fact_Sales[total_price])
-
+DAX
 Total Profit = SUM(Fact_Sales[total_price] - Fact_Sales[total_cost])
-
+DAX
 Profit Margin (%) = DIVIDE([Total Profit], [Total Sales], 0) * 100
-
+DAX
 ### Time Intelligent
+DAX
 Total Sale PY = CALCULATE([Total Sale],SAMEPERIODLASTYEAR(date_table[date]))
-
+DAX
 Total Sale YoY% = DIVIDE([Total Sales] - [Total Sale PY], [Total Sale PY])
-'''
+
