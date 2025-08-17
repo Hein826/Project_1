@@ -17,10 +17,7 @@ The goal is to track Sales, Profit, and Profit Margin across regions, categories
 ## ⚙️ Data Preparation  
 ### Date Table (SQL)  
 - Created using `generate_series()` to support time intelligence functions.  
-- Date Table (SQL) → Created using generate_series() for time intelligence functions
-- Fact Table (SQL) → Combined Sales, Products, and Exchange Rates to pre-calculate cost, price, and exchange-adjusted values
-- Star Schema → Modeled in Power BI with fact and dimension tables
-
+- Date Table (SQL) → Created using generate_series() for time intelligence functions.
 
 ```sql
 CREATE TABLE date_table AS
@@ -39,6 +36,24 @@ FROM (
     )::date AS date
 ) AS d;
 ```
+
+### Fact Sales Table (SQL)
+
+- Joined Sales, Products, and Exchange Rate tables for performance optimization.
+
+```sql
+SELECT s.*,
+       (s.quantity * p.unitcost) AS total_cost,
+       (s.quantity * p.unitprice) AS total_price,
+       e.exchange
+FROM sales s
+LEFT JOIN exchange_rates e
+    ON e.date = s.orderdate
+   AND e.currency = s.currencycode
+LEFT JOIN products p 
+    ON s.productkey = p.productkey;
+```
+
 
 ### 🧮 DAX Measures
 ### Total Sales
