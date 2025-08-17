@@ -69,14 +69,19 @@ Total Sale PY = CALCULATE([Total Sale],SAMEPERIODLASTYEAR(date_table[date])) | T
 Summary Page
 <img width="971" height="546" alt="image" src="https://github.com/user-attachments/assets/91296a62-800d-429e-a535-e0498457f23b" />
 
+
 Drill-through Page (Country Level)
 <img width="972" height="551" alt="image" src="https://github.com/user-attachments/assets/2fd0e1a1-46c4-4a52-8031-36ed80a5d380" />
+
 
 Best-Selling Product Highlight (Country Drill-through)
 <img width="968" height="251" alt="image" src="https://github.com/user-attachments/assets/049b3162-aeed-42b3-85b0-f4a5ad41b155" />
 
+
 Tooltip (Product Sales Trend)
 <img width="964" height="541" alt="image" src="https://github.com/user-attachments/assets/70c50933-62fb-4bd7-b407-7ad45771e1b6" />
+
+
 
 ## 🚀 Key Learnings
 
