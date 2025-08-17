@@ -51,7 +51,7 @@ Total Profit = SUM(Fact_Sales[total_price] - Fact_Sales[total_cost])
 DAX
 Profit Margin (%) = DIVIDE([Total Profit], [Total Sales], 0) * 100
 DAX
-### Time Intelligent (PY) & YoY%)
+### Time Intelligent (PY)
 DAX
 Total Sale PY = CALCULATE([Total Sale],SAMEPERIODLASTYEAR(date_table[date]))
 ### Time Intelligent (YoY%)
@@ -106,7 +106,7 @@ Tooltip (Product Sales Trend)
 
 ## 🔗 Live Dashboard 
 
-👉 [View on Power BI Service] (https://app.powerbi.com/view?r=eyJrIjoiNTcxMjgzZTktMjI5ZC00ZDhmLThiMDgtZThhZTg2MjM3NjFmIiwidCI6IjJjNzYxZjM5LTJiNGEtNGJlOC05NmY1LWU3ZTI0YmIyMTU2NSIsImMiOjEwfQ%3D%3D)
+[View on Power BI Service] (https://app.powerbi.com/view?r=eyJrIjoiNTcxMjgzZTktMjI5ZC00ZDhmLThiMDgtZThhZTg2MjM3NjFmIiwidCI6IjJjNzYxZjM5LTJiNGEtNGJlOC05NmY1LWU3ZTI0YmIyMTU2NSIsImMiOjEwfQ%3D%3D)
 
 
 ## ✨ Author
