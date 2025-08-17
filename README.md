@@ -20,7 +20,7 @@ The goal is to track Sales, Profit, and Profit Margin across regions, categories
 - Date Table (SQL) → Created using generate_series() for time intelligence functions
 - Fact Table (SQL) → Combined Sales, Products, and Exchange Rates to pre-calculate cost, price, and exchange-adjusted values
 - Star Schema → Modeled in Power BI with fact and dimension tables
-
+- 
 ```sql
 CREATE TABLE date_table AS
 SELECT 
@@ -37,4 +37,17 @@ FROM (
         INTERVAL '1 day'
     )::date AS date
 ) AS d;
+
+## 🧮 DAX Measures
+'''dax
+Total Sales = SUM(Fact_Sales[total_price])
+
+Total Profit = SUM(Fact_Sales[total_price] - Fact_Sales[total_cost])
+
+Profit Margin (%) = DIVIDE([Total Profit], [Total Sales], 0) * 100
+
+### Time Intelligent
+Total Sale PY = CALCULATE([Total Sale],SAMEPERIODLASTYEAR(date_table[date]))
+
+Total Sale YoY% = DIVIDE([Total Sales] - [Total Sale PY], [Total Sale PY])
 
